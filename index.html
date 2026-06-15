@@ -1,9 +1,10 @@
+
 <!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Análisis Estratégico — Mercado Libre</title>
+<title>Análisis Estratégico, Mercado Libre</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -90,10 +91,134 @@ strong.k{font-weight:700}
 .stack>*+*{margin-top:.85em}
 
 /* footer */
-.foot{position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(14px,2.4vh,26px);
-  display:flex;justify-content:space-between;align-items:center;
-  font-size:clamp(.6rem,.95vw,.72rem);letter-spacing:.04em;opacity:.7;font-weight:600}
-.foot .pg{font-variant-numeric:tabular-nums;letter-spacing:.12em}
+.foot{position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(8px,1.6vh,18px);min-height:1.2em}
+.foot .brand{position:absolute;left:0;bottom:0;font-size:clamp(.52rem,.78vw,.66rem);font-weight:600;opacity:.5;letter-spacing:.02em}
+.foot .cite{position:absolute;left:0;right:0;bottom:clamp(24px,3.6vh,34px);margin:0 auto;max-width:80%;text-align:center;
+  font-size:clamp(.5rem,.76vw,.63rem);line-height:1.3;opacity:.72;font-weight:500}
+.foot .pg{position:absolute;right:0;bottom:0;font-variant-numeric:tabular-nums;letter-spacing:.1em;font-weight:700;
+  font-size:clamp(.55rem,.8vw,.68rem);opacity:.55}
+.slide--navy .foot .brand,.slide--navy .foot .pg{opacity:.5}.slide--navy .foot .cite{opacity:.62}
+
+/* ── org chart (slide 6) ── */
+.org{display:flex;flex-direction:column;gap:clamp(5px,.9vh,11px);flex:1;min-height:0;justify-content:center}
+.otier{display:flex;flex-direction:column}
+.olab{font-weight:800;font-size:clamp(.6rem,.92vw,.76rem);letter-spacing:.05em;text-transform:uppercase;color:var(--ml-yellow);margin-bottom:.45em}
+.olab .sub{color:#fff;opacity:.5;font-weight:600;letter-spacing:.01em;text-transform:none}
+.ohead{display:flex;justify-content:center;margin-bottom:.5em}
+.opers{border:1.5px solid rgba(255,230,0,.55);background:var(--ml-navy-700);border-radius:13px;
+  padding:clamp(7px,1vw,13px) clamp(14px,2vw,26px);text-align:center;min-width:min(360px,62%)}
+.opers.lead{border-color:var(--ml-yellow);box-shadow:0 6px 22px rgba(0,0,0,.28)}
+.opers.ceo{border-color:#5b8cff;box-shadow:0 6px 22px rgba(0,0,0,.28)}
+.opers .nm{font-family:"Bricolage Grotesque";font-weight:700;font-size:clamp(.9rem,1.4vw,1.2rem)}
+.opers .ro{font-size:clamp(.66rem,.95vw,.82rem);opacity:.85}
+.opers .mt{font-size:.6rem;opacity:.5;margin-top:.12em}
+.opers .pill{display:inline-block;margin-top:.3em;font-size:.56rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  padding:.18em .7em;border-radius:999px;background:var(--ml-yellow);color:var(--ml-navy)}
+.opers.ceo .pill{background:#5b8cff;color:#0a0f2a}
+.omembers{display:grid;grid-template-columns:repeat(8,1fr);gap:clamp(4px,.65vw,9px)}
+.omem{border:1px solid rgba(255,230,0,.25);border-radius:9px;padding:clamp(5px,.7vw,9px) 4px;text-align:center;background:rgba(255,255,255,.02)}
+.omem .nm{font-weight:700;font-size:clamp(.54rem,.8vw,.7rem);line-height:1.06}
+.omem .cl{font-size:.54rem;opacity:.5;margin-top:.1em}
+.omem .ind{font-size:.52rem;color:#7fd49b;font-weight:700;margin-top:.04em}
+.ocoms{display:flex;justify-content:center;gap:.5em;flex-wrap:wrap;margin-top:.45em}
+.ocom{border:1px solid rgba(255,230,0,.32);border-radius:999px;padding:.24em .8em;font-size:.6rem;font-weight:600;color:var(--ml-yellow);opacity:.88}
+.oarrow{align-self:center;color:var(--ml-yellow);opacity:.45;font-size:.9em;line-height:.5;margin:-2px 0}
+.oexecs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(7px,1.1vw,15px)}
+.oexec{border:1px solid rgba(255,230,0,.28);border-radius:11px;padding:clamp(6px,.95vw,12px);text-align:center}
+.oexec .nm{font-weight:700;font-size:clamp(.72rem,1.02vw,.92rem)}
+.oexec .ro{font-size:.62rem;opacity:.78;margin-top:.1em;line-height:1.2}
+.ounits{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(6px,.85vw,12px)}
+.ounit{border:1px solid rgba(255,230,0,.28);border-radius:10px;padding:clamp(6px,.85vw,11px) 4px;text-align:center}
+.ounit .nm{font-weight:700;font-size:clamp(.64rem,.92vw,.84rem);color:var(--ml-yellow)}
+.ounit .ds{font-size:.55rem;opacity:.6;margin-top:.1em;line-height:1.2}
+.octry{display:flex;justify-content:center;gap:.5em;flex-wrap:wrap;margin-top:.5em;align-items:center}
+.octry .cn{color:#fff;opacity:.55;font-size:.62rem;font-weight:600}
+.octry b{border:1px solid rgba(120,160,255,.45);border-radius:999px;padding:.2em .7em;font-size:.6rem;font-weight:700;color:#9fc0ff}
+
+/* ── PESTEL comparison (slide 7) ── */
+.cmp{width:100%;border-collapse:collapse;background:var(--ml-paper);border-radius:12px;overflow:hidden;
+  font-size:clamp(.64rem,.94vw,.86rem);box-shadow:0 8px 26px rgba(45,50,119,.16)}
+.cmp th,.cmp td{padding:.5em .68em;text-align:left;border-bottom:1px solid rgba(45,50,119,.12);vertical-align:top;line-height:1.28}
+.cmp thead th{background:var(--ml-navy);color:var(--ml-paper);font-size:.74em;letter-spacing:.03em;text-transform:uppercase;font-weight:700;border-bottom:none}
+.cmp thead th.mx{background:#1b2060}
+.cmp thead th.mx .fb{display:block;font-size:.78em;color:var(--ml-yellow);letter-spacing:.06em}
+.cmp td.dim{font-weight:800;color:var(--ml-navy);white-space:nowrap}
+.cmp td.mx{background:color-mix(in srgb,var(--ml-yellow) 32%,transparent);font-weight:600;color:var(--ml-ink)}
+.cmp tbody tr:last-child td{border-bottom:none}
+.cmp--6 th,.cmp--6 td{padding:.4em .6em;line-height:1.24}
+.pinsight{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2.2vw,34px);align-items:start}
+.pi{font-size:clamp(.76rem,1.05vw,.94rem);line-height:1.32}
+.pi b{font-family:"Bricolage Grotesque";font-weight:800;color:var(--ml-navy);font-size:1.12em;margin-right:.35em;white-space:nowrap}
+
+/* ── PESTEL México (slide 7) ── */
+.mxpestel{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:clamp(9px,1.3vw,16px);flex:1;min-height:0}
+.mxcard{background:var(--ml-paper);border-radius:12px;padding:clamp(9px,1.2vw,15px) clamp(10px,1.3vw,16px);
+  box-shadow:0 6px 18px rgba(45,50,119,.12);display:flex;flex-direction:column;gap:.4em}
+.mxcard .h{display:flex;align-items:center;gap:.55em}
+.mxcard .bdg{width:1.7em;height:1.7em;border-radius:7px;background:var(--ml-navy);color:var(--ml-yellow);
+  font-family:"Bricolage Grotesque";font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.82em;flex-shrink:0}
+.mxcard .t{font-family:"Bricolage Grotesque";font-weight:700;color:var(--ml-navy);font-size:clamp(.88rem,1.25vw,1.1rem);line-height:1}
+.mxcard ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.28em}
+.mxcard li{font-size:clamp(.66rem,.9vw,.79rem);line-height:1.26;color:var(--ml-ink);padding-left:.85em;position:relative}
+.mxcard li::before{content:"";position:absolute;left:0;top:.46em;width:5px;height:5px;border-radius:50%;background:var(--ml-yellow);box-shadow:0 0 0 1px var(--ml-navy)}
+.mxcard li b{font-weight:800;color:var(--ml-navy)}
+/* PESTEL matrix (positive/negative/null tags) */
+.mtx li{padding-left:0;display:flex;align-items:flex-start;gap:.45em}
+.mtx li::before{display:none}
+.tg{display:inline-flex;align-items:center;justify-content:center;width:1.25em;height:1.25em;border-radius:5px;
+  font-weight:900;font-size:.82em;line-height:1;flex-shrink:0;margin-top:.05em;color:#fff}
+.tg.pos{background:#1e7d4f}.tg.neg{background:#c0392b}.tg.nul{background:#8b90a6}
+.mtxlegend{display:flex;gap:clamp(12px,1.8vw,26px);flex-wrap:wrap;font-size:clamp(.66rem,.92vw,.8rem);font-weight:600}
+.mtxlegend span{display:inline-flex;align-items:center;gap:.4em}
+.ccards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.5vw,20px)}
+.ccard{background:var(--ml-paper);border-radius:13px;padding:clamp(11px,1.4vw,18px);box-shadow:0 6px 18px rgba(45,50,119,.13)}
+.ccard.foco{outline:3px solid var(--ml-navy);outline-offset:-3px}
+.ccard .cf{font-family:"Bricolage Grotesque";font-weight:800;color:var(--ml-navy);font-size:clamp(1rem,1.5vw,1.3rem);display:flex;align-items:center;gap:.5em}
+.ccard .cf .rk{font-size:.6em;font-weight:700;background:var(--ml-navy);color:var(--ml-yellow);padding:.18em .55em;border-radius:999px;letter-spacing:.04em}
+.ccard .big{font-family:"Bricolage Grotesque";font-weight:800;color:var(--ml-navy);font-size:clamp(1.5rem,2.6vw,2.2rem);line-height:1;margin:.3em 0 .05em}
+.ccard .lb{font-size:.7rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;opacity:.55}
+.ccard ul{list-style:none;margin:.6em 0 0;padding:0;display:flex;flex-direction:column;gap:.3em}
+.ccard li{font-size:clamp(.68rem,.92vw,.82rem);line-height:1.3;padding-left:.85em;position:relative;color:var(--ml-ink)}
+.ccard li::before{content:"";position:absolute;left:0;top:.5em;width:5px;height:5px;border-radius:50%;background:var(--ml-yellow);box-shadow:0 0 0 1px var(--ml-navy)}
+.ccard li b{font-weight:800;color:var(--ml-navy)}
+
+/* ── org chart (slide 6) ── */
+.org{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(6px,1vh,12px)}
+.otier-h{font-weight:800;font-size:clamp(.66rem,.98vw,.84rem);letter-spacing:.04em;text-transform:uppercase;margin-bottom:.45em}
+.otier-h .sub{font-weight:500;text-transform:none;letter-spacing:0;opacity:.65;font-size:.86em}
+.oh-board{color:var(--ml-yellow)} .oh-mgmt{color:#8ea2ff} .oh-units{color:#5fd0a8}
+.ocard{background:var(--ml-navy-700);border-radius:12px;padding:clamp(8px,1.1vw,14px) clamp(10px,1.3vw,18px);text-align:center}
+.ocard.lead-b{border-top:3px solid var(--ml-yellow)} .ocard.lead-m{border-top:3px solid #8ea2ff}
+.ocard .nme{font-family:"Bricolage Grotesque";font-weight:700;font-size:clamp(.92rem,1.4vw,1.18rem);line-height:1.05}
+.ocard .rol{font-size:clamp(.7rem,.98vw,.84rem);font-weight:600;opacity:.92;margin-top:.12em}
+.ocard .mta{font-size:clamp(.6rem,.82vw,.72rem);opacity:.6;margin-top:.2em}
+.olead{display:flex;justify-content:center;margin:.1em 0}.olead .ocard{min-width:min(48%,420px)}
+.omem{display:grid;grid-template-columns:repeat(8,1fr);gap:clamp(5px,.7vw,9px);margin-top:.5em}
+.mchip{background:rgba(255,255,255,.03);border:1px solid rgba(255,230,0,.18);border-radius:9px;padding:.5em .35em;text-align:center}
+.mchip .mn{font-weight:700;font-size:clamp(.6rem,.82vw,.74rem);line-height:1.05}
+.mchip .mc{font-size:.6rem;opacity:.55;margin-top:.12em}
+.mchip .mi{font-size:.56rem;font-weight:700;color:#5fd0a8;margin-top:.05em}
+.ocomm{display:flex;gap:.5em;justify-content:center;flex-wrap:wrap;margin-top:.5em}
+.ocomm span{font-size:clamp(.58rem,.82vw,.72rem);font-weight:600;color:var(--ml-yellow);
+  border:1px solid rgba(255,230,0,.4);border-radius:999px;padding:.3em .9em}
+.oexecs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1.1vw,16px);margin-top:.5em}
+.ounits{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(7px,.9vw,13px);margin-top:.5em}
+.uchip{background:var(--ml-navy-700);border-radius:10px;padding:clamp(7px,.9vw,12px);text-align:center}
+.uchip .un{font-family:"Bricolage Grotesque";font-weight:700;font-size:clamp(.72rem,1vw,.92rem)}
+.uchip .ud{font-size:.58rem;opacity:.6;margin-top:.15em;line-height:1.2}
+.octy{display:flex;gap:.5em;justify-content:center;flex-wrap:wrap;margin-top:.55em}
+.octy span{font-size:clamp(.6rem,.84vw,.74rem);font-weight:700;color:#8ea2ff;
+  border:1px solid rgba(142,162,255,.35);border-radius:999px;padding:.28em .85em}
+.oarrow{text-align:center;color:rgba(255,230,0,.5);font-size:1.1rem;line-height:.3;margin:-.1em 0}
+
+/* ── pestel comparison (slide 7) ── */
+.pcmp{width:100%;border-collapse:collapse;font-size:clamp(.66rem,.96vw,.9rem)}
+.pcmp th,.pcmp td{padding:.5em .6em;text-align:left;border-bottom:1px solid color-mix(in srgb,var(--accent) 14%,transparent);vertical-align:top}
+.pcmp thead th{font-family:"Bricolage Grotesque";font-weight:700;font-size:clamp(.82rem,1.2vw,1.05rem);
+  border-bottom:2px solid var(--accent);text-transform:none;letter-spacing:0}
+.pcmp thead th .pct{display:block;font-size:.66rem;font-weight:700;opacity:.6;font-family:"Hanken Grotesk"}
+.pcmp td:first-child{font-weight:700;font-size:.82em;opacity:.7;text-transform:uppercase;letter-spacing:.04em;width:7.5em}
+.pcmp .em{color:var(--accent);font-weight:800}
 
 /* ── reveal ── */
 .reveal{opacity:0;transform:translateY(15px);
@@ -315,6 +440,7 @@ strong.k{font-weight:700}
 @media (max-width:760px){
   .grid.c2,.grid.c2-wide,.grid.c2-rev{grid-template-columns:1fr}
   .objs,.pestel,.levels,.units{grid-template-columns:1fr 1fr}
+  .mxpestel{grid-template-columns:1fr 1fr}.mxcard{grid-auto-rows:auto}
   .thistory{grid-template-columns:1fr 1fr}.thistory::before{display:none}
   .mcard,.mnode .stem,.mnode .dot{position:static;transform:none;width:auto}
   .mnode{height:auto;border-left:3px solid var(--ml-yellow);padding-left:.8em;margin-bottom:.8em}
@@ -322,6 +448,9 @@ strong.k{font-weight:700}
   .pf-top,.pf-left,.pf-center,.pf-right,.pf-bottom{grid-area:auto}
   .pdiamond,.parrow{display:none}
   .histstats{grid-template-columns:1fr 1fr;gap:18px}
+  .omem{grid-template-columns:repeat(4,1fr)}.oexecs,.ounits{grid-template-columns:1fr 1fr}
+  .pcmp,.pcmp thead,.pcmp tbody,.pcmp th,.pcmp td,.pcmp tr{display:block}
+  .pcmp thead{display:none}.pcmp td:first-child{width:auto}
   .barrow{grid-template-columns:6em 1fr auto}
 }
 @media (prefers-reduced-motion:reduce){
@@ -364,7 +493,7 @@ strong.k{font-weight:700}
       <h2 class="title display reveal" style="--d:1">Más que un e-commerce:<br>un ecosistema</h2>
       <p class="body reveal" style="--d:2">Mercado Libre no compite como una tienda en línea más. Integra <strong class="k">comercio, pagos, logística y publicidad</strong> dentro de una sola plataforma, de modo que su ventaja competitiva no nace de un producto aislado sino de la interacción entre esos cuatro componentes.</p>
       <p class="body reveal" style="--d:3">Cada pieza fortalece a las demás: el marketplace alimenta los datos de Mercado Pago, la logística propia sostiene la promesa de entrega, y la publicidad se nutre del comportamiento de compra.</p>
-      <p class="body reveal" style="--d:4">Para sustentar este análisis se emplearon herramientas complementarias: <span class="hl">PESTEL, las Cinco Fuerzas de Porter, el modelo VRIO, la Cadena de Valor y las matrices MEFE, MEFI y MPC</span>, aplicadas con foco en el mercado mexicano.</p>
+      <p class="body reveal" style="--d:4">Para sustentar este análisis se emplearon herramientas complementarias: <span class="hl">PESTEL, las Cinco Fuerzas de Porter, el modelo VRIO, la Cadena de Valor y las matrices MEFE, MEFI y MPC</span>. El macroentorno PESTEL partió de una <strong class="k">comparación de tres países</strong>, México, Argentina y Brasil, pero se decidió <strong class="k">enfocar el análisis únicamente en México</strong> como mercado de estudio.</p>
     </div>
     <div class="reveal" style="--d:3">
       <svg class="eco" viewBox="0 0 560 560" aria-label="Ecosistema de unidades de Mercado Libre">
@@ -384,7 +513,7 @@ strong.k{font-weight:700}
       </svg>
     </div>
   </div>
-  <div class="foot"><span>Mercado Libre · Dirección Estratégica</span><span class="pg">02 / 16</span></div>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Marcos teóricos: David (2017); Porter (1985, 2008); Barney (1991). Elaboración propia.</span><span class="pg">02 / 19</span></div>
 </section>
 
 <!-- 3 · HISTORIA -->
@@ -393,7 +522,7 @@ strong.k{font-weight:700}
     <h2 class="title display reveal" style="--d:1;font-size:clamp(1.6rem,3.4vw,2.7rem);margin-top:.3em">De un garaje a la empresa más valiosa de LATAM</h2>
   </div>
   <div class="thistory reveal" style="--d:2">
-    <div class="mnode up"><div class="mcard"><div class="yr">1999</div><div class="ti">Fundación</div><div class="cp">Marcos Galperín funda ML en Buenos Aires.</div></div><div class="stem"></div><div class="dot"></div></div>
+    <div class="mnode up"><div class="mcard"><div class="yr">1999</div><div class="ti">Fundación</div><div class="cp">Marcos Galperín funda Mercado Libre en Buenos Aires.</div></div><div class="stem"></div><div class="dot"></div></div>
     <div class="mnode down"><div class="mcard"><div class="yr">2001</div><div class="ti">Inversión de eBay</div><div class="cp">eBay valida el potencial regional.</div></div><div class="stem"></div><div class="dot"></div></div>
     <div class="mnode up"><div class="mcard"><div class="yr">2003</div><div class="ti">Nace Mercado Pago</div><div class="cp">Pagos digitales para dar confianza.</div></div><div class="stem"></div><div class="dot"></div></div>
     <div class="mnode down"><div class="mcard"><div class="yr">2007</div><div class="ti">Salida a bolsa</div><div class="cp">Cotiza en NASDAQ como MELI.</div></div><div class="stem"></div><div class="dot"></div></div>
@@ -409,7 +538,7 @@ strong.k{font-weight:700}
     <div class="hs"><div class="n">18</div><div class="l">países donde opera</div></div>
     <div class="hs"><div class="n">~US$200B</div><div class="l">procesados por Mercado Pago</div></div>
   </div>
-  <div class="foot"><span>Mercado Libre · Dirección Estratégica</span><span class="pg">03 / 16</span></div>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Elaboración propia con base en MercadoLibre, Inc. (2025) y Statista (2024).</span><span class="pg">03 / 19</span></div>
 </section>
 
 <!-- 4 · IDENTIDAD -->
@@ -419,7 +548,7 @@ strong.k{font-weight:700}
     <div class="stack">
       <h2 class="title display reveal" style="--d:1">¿Quién es Mercado Libre hoy?</h2>
       <p class="body reveal" style="--d:2">La empresa de tecnología más grande de América Latina. Jurídicamente, un <strong class="k">holding constituido en Delaware</strong> que cotiza en el NASDAQ bajo el símbolo <strong class="k">MELI</strong>, con subsidiarias de propiedad total en cada país.</p>
-      <p class="body reveal" style="--d:3">Su misión —<span class="hl">democratizar el comercio y el dinero</span> en la región— se traduce en una cultura de riesgo emprendedor, creación de valor para el usuario y mejora continua ("beta continuo").</p>
+      <p class="body reveal" style="--d:3">Su misión, <span class="hl">democratizar el comercio y el dinero</span> en la región, se traduce en una cultura de riesgo emprendedor, creación de valor para el usuario y mejora continua ("beta continuo").</p>
     </div>
     <div class="stack reveal" style="--d:2">
       <div class="stats">
@@ -437,7 +566,7 @@ strong.k{font-weight:700}
       </div>
     </div>
   </div>
-  <div class="foot"><span>Mercado Libre · Dirección Estratégica</span><span class="pg">04 / 16</span></div>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Elaboración propia con base en MercadoLibre, Inc. (2025), Form 10-K FY2024 (SEC).</span><span class="pg">04 / 19</span></div>
 </section>
 
 <!-- 5 · ESTRUCTURA -->
@@ -447,7 +576,7 @@ strong.k{font-weight:700}
   </div>
   <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(16px,3vh,34px)">
     <div class="grid c2" style="flex:0 0 auto;align-items:start">
-      <p class="body reveal" style="--d:2">El ecosistema se articula en cinco unidades complementarias —el <strong class="k">Marketplace</strong> (en 2024 superó a Amazon en valoración bursátil, con un alza accionaria del 34% frente al 27%), <strong class="k">Mercado Pago</strong> (fintech en ocho países), <strong class="k">Mercado Envíos</strong>, <strong class="k">Mercado Ads</strong> y <strong class="k">Mercado Shops</strong>— sobre <span class="hl">Fury</span>, la plataforma interna que gestiona más de <strong class="k">30,000 microservicios</strong>.</p>
+      <p class="body reveal" style="--d:2">El ecosistema se articula en cinco unidades complementarias, el <strong class="k">Marketplace</strong> (en 2024 superó a Amazon en valoración bursátil, con un alza accionaria del 34% frente al 27%), <strong class="k">Mercado Pago</strong> (fintech en ocho países), <strong class="k">Mercado Envíos</strong>, <strong class="k">Mercado Ads</strong> y <strong class="k">Mercado Shops</strong>, sobre <span class="hl">Fury</span>, la plataforma interna que gestiona más de <strong class="k">30,000 microservicios</strong>.</p>
       <div class="reveal" style="--d:3;align-self:start">
         <div style="font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ml-yellow);margin-bottom:.6em">Cuatro objetivos estratégicos</div>
         <div class="objs">
@@ -469,39 +598,149 @@ strong.k{font-weight:700}
       <div class="fury"><b>Fury</b> · plataforma interna · +30,000 microservicios · ~17,000 ingenieros</div>
     </div>
   </div>
-  <div class="foot"><span>Mercado Libre · Dirección Estratégica</span><span class="pg">05 / 16</span></div>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Elaboración propia con base en MercadoLibre, Inc. (2024) y MercadoLibre Tech (2024).</span><span class="pg">05 / 19</span></div>
 </section>
 
-<!-- 6 · PESTEL -->
-<section class="slide slide--yellow">
-  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">06</span> · Macroentorno PESTEL</span></div>
-  <div class="grid c2-rev" style="align-items:start">
-    <div class="stack" style="align-self:center">
-      <h2 class="title display reveal" style="--d:1">Tres países,<br>tres realidades</h2>
-      <p class="body reveal" style="--d:2">El macroentorno comparó a México, Argentina y Brasil en las seis dimensiones PESTEL. Un hallazgo destaca por su valor estratégico:</p>
-      <div class="reveal" style="--d:3;display:flex;gap:clamp(18px,2.4vw,34px)">
-        <div class="stat"><div class="n">23%</div><div class="l">billetera digital en México</div></div>
-        <div class="stat"><div class="n">37%</div><div class="l">billetera digital en Argentina</div></div>
+<!-- 6 · ORGANIGRAMA -->
+<section class="slide slide--navy">
+  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">06</span> · Estructura organizacional</span></div>
+  <div class="org reveal" style="--d:1">
+    <div class="otier">
+      <div class="olab">Consejo de Administración <span class="sub">· supervisión estratégica · 9 miembros · 7 independientes · 3 clases escalonadas</span></div>
+      <div class="ohead"><div class="opers lead"><div class="nm">Marcos Galperín</div><div class="ro">Executive Chairman of the Board</div><div class="mt">Fundador · MBA Stanford · Desde enero 2026</div><span class="pill">Supervisión</span></div></div>
+      <div class="omembers">
+        <div class="omem"><div class="nm">Nicolás Galperín</div><div class="cl">Clase I</div></div>
+        <div class="omem"><div class="nm">Emiliano Calemzuk</div><div class="cl">Clase I</div><div class="ind">Independiente</div></div>
+        <div class="omem"><div class="nm">Andrea Mayol-Pidal</div><div class="cl">Clase II</div><div class="ind">Independiente</div></div>
+        <div class="omem"><div class="nm">Stelleo Tolda</div><div class="cl">Clase II</div><div class="ind">Independiente</div></div>
+        <div class="omem"><div class="nm">Michael Keresman</div><div class="cl">Clase III</div><div class="ind">Independiente</div></div>
+        <div class="omem"><div class="nm">Susan Segal</div><div class="cl">Clase III</div><div class="ind">Independiente</div></div>
+        <div class="omem"><div class="nm">Henrique Dubugras</div><div class="cl">Clase III</div><div class="ind">Independiente</div></div>
+        <div class="omem"><div class="nm">Nicolás Szekasy</div><div class="cl">Clase I</div><div class="ind">Independiente</div></div>
       </div>
-      <p class="body reveal" style="--d:4">El diferencial revela amplio espacio de crecimiento para Mercado Pago. A ello se suma una <strong class="k">informalidad laboral superior al 55%</strong> —más de 30 millones de personas sin historial crediticio formal—, un mercado enorme para los servicios de crédito.</p>
+      <div class="ocoms"><span class="ocom">Comité de Auditoría</span><span class="ocom">Comité de Compensación</span><span class="ocom">Comité de Nominaciones y Gobierno Corporativo</span></div>
     </div>
-    <div class="reveal" style="--d:3;align-self:center">
-      <div class="pestel">
-        <div class="pcard"><div class="h">Político</div><div class="b">Regulación fintech variable por país; formalización como oportunidad.</div></div>
-        <div class="pcard"><div class="h">Económico</div><div class="b">Volatilidad de corto plazo, pero oportunidad estructural enorme.</div><div class="s">e-commerce 11% del retail</div></div>
-        <div class="pcard"><div class="h">Social</div><div class="b">Población joven e hiperconectada; baja bancarización.</div><div class="s">&lt;50% bancarizados (MX)</div></div>
-        <div class="pcard"><div class="h">Tecnológico</div><div class="b">Tráfico e-commerce mayoritariamente móvil; IA generativa.</div><div class="s">85% mobile</div></div>
-        <div class="pcard"><div class="h">Ecológico</div><div class="b">Bono de sostenibilidad y flota eléctrica en CEDIS.</div></div>
-        <div class="pcard"><div class="h">Legal</div><div class="b">18 marcos regulatorios; escrutinio antimonopolio por dominio.</div></div>
+    <div class="oarrow">▼</div>
+    <div class="otier">
+      <div class="olab" style="color:#7fa8ff">Equipo Ejecutivo <span class="sub">· ejecución operativa</span></div>
+      <div class="ohead"><div class="opers ceo"><div class="nm">Ariel Szarfsztejn</div><div class="ro">President &amp; Chief Executive Officer (CEO)</div><div class="mt">Commerce President 2023-2025 · MBA Stanford · Desde enero 2026</div><span class="pill">Operación</span></div></div>
+      <div class="oexecs">
+        <div class="oexec"><div class="nm">Osvaldo Giménez</div><div class="ro">Fintech President, Mercado Pago, Crédito y Fondo</div></div>
+        <div class="oexec"><div class="nm">Daniel Rabinovich</div><div class="ro">EVP &amp; COO, Operaciones, tecnología, plataforma Fury</div></div>
+        <div class="oexec"><div class="nm">Martín de los Santos</div><div class="ro">EVP &amp; CFO, Finanzas, inversionistas, reportes SEC</div></div>
       </div>
+    </div>
+    <div class="oarrow">▼</div>
+    <div class="otier">
+      <div class="olab" style="color:#7fd49b">Unidades de negocio <span class="sub">· operaciones en 18 países</span></div>
+      <div class="ounits">
+        <div class="ounit"><div class="nm">Marketplace</div><div class="ds">Comercio C2C · B2C · B2B</div></div>
+        <div class="ounit"><div class="nm">Mercado Pago</div><div class="ds">Pagos, crédito, inversiones, seguros</div></div>
+        <div class="ounit"><div class="nm">Mercado Envíos</div><div class="ds">Logística, fulfillment, MeLi Air</div></div>
+        <div class="ounit"><div class="nm">Mercado Ads</div><div class="ds">Publicidad digital, retail media</div></div>
+        <div class="ounit"><div class="nm">Mercado Shops</div><div class="ds">Tiendas en línea propias</div></div>
+      </div>
+      <div class="octry"><span class="cn">Operación regional descentralizada, Country Manager por país:</span><b>Brasil 55%</b><b>México 22%</b><b>Argentina 18%</b><b>+15 países</b></div>
     </div>
   </div>
-  <div class="foot"><span>Mercado Libre · Dirección Estratégica</span><span class="pg">06 / 16</span></div>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Elaboración propia con base en Mercado Libre (s.f.) y MercadoLibre, Inc. (2024), Form 10-K (SEC).</span><span class="pg">06 / 19</span></div>
+</section>
+
+<!-- 7 · COMPARACIÓN 3 PAÍSES -->
+<section class="slide slide--yellow">
+  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">07</span> · Macroentorno · comparación</span>
+    <h2 class="title display reveal" style="--d:1;font-size:clamp(1.7rem,3.4vw,2.8rem);margin-top:.3em">Tres países comparados</h2>
+    <p class="reveal" style="--d:2;font-size:clamp(.8rem,1.1vw,.96rem);font-weight:600;opacity:.72;margin-top:.3em;max-width:80ch">El análisis del macroentorno se realizó sobre <strong class="k">tres mercados</strong> (México, Brasil y Argentina); las condiciones que cambian entre ellos llevaron a elegir <strong class="k">México</strong> como mercado de estudio.</p>
+  </div>
+  <div class="reveal" style="--d:3;flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(10px,1.8vh,18px)">
+    <div class="tbl-wrap" style="font-size:clamp(.62rem,.88vw,.78rem)">
+      <table class="cmp">
+        <thead><tr><th>Factor</th><th class="mx">México <span class="fb">mercado de estudio</span></th><th>Brasil</th><th>Argentina</th></tr></thead>
+        <tbody>
+          <tr><td class="dim">E-commerce 2025 (proy.)</td><td class="mx"><b>US$44 B</b> · 2.º de la región</td><td><b>US$48.2 B</b> · líder regional</td><td><b>&gt;US$20 B</b> · 3.er lugar</td></tr>
+          <tr><td class="dim">Inflación esperada 2025</td><td class="mx"><b>~3.8%</b> · la más baja y estable</td><td>Mayor que la de México</td><td>Mucho más alta e inestable</td></tr>
+          <tr><td class="dim">Económico</td><td class="mx">IED récord US$36,872 M (nearshoring); e-commerce 11% del retail.</td><td>Mayor mercado: 55% de los ingresos de la empresa.</td><td>Austeridad y devaluación: ingresos en USD a la baja.</td></tr>
+          <tr><td class="dim">Político / Legal</td><td class="mx">Sheinbaum; la COFECE vigila la dominancia; T-MEC libera datos.</td><td>El CADE (antimonopolio) y la LGPD, marco robusto.</td><td>Milei; el BCRA y los controles cambiarios.</td></tr>
+          <tr><td class="dim">Tecnológico</td><td class="mx">Inversión US$2,500 M; 5G en 2026-27.</td><td>US$4,600 M; PIX y MELI Air; epicentro tech.</td><td>"Laboratorio de innovación" (QR, crédito).</td></tr>
+          <tr><td class="dim">Social / Ecológico</td><td class="mx">Informalidad &gt;55%; 85% del tráfico es móvil.</td><td>Amplia base digital; agenda del Amazonas.</td><td>Auge de segunda mano por la crisis.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="reveal" style="font-size:clamp(.82rem,1.15vw,1rem);font-weight:600;text-align:center"><strong class="k">Por su tamaño y su estabilidad macro, México ofrece el entorno más predecible</strong> para decisiones de inversión, precios y logística.</p>
+  </div>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Elaboración propia con base en Statista (2025), Bloomberg Línea (2025), Reuters (2026) y MercadoLibre, Inc. (2024).</span><span class="pg">07 / 19</span></div>
+</section>
+
+<!-- 8 · MATRIZ PESTEL -->
+<section class="slide slide--yellow">
+  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">08</span> · Matriz PESTEL de México</span>
+    <div class="reveal" style="--d:1;display:flex;justify-content:space-between;align-items:flex-end;gap:1em;flex-wrap:wrap;margin-top:.3em">
+      <h2 class="title display" style="font-size:clamp(1.6rem,3.2vw,2.6rem)">Oportunidades y amenazas del entorno</h2>
+      <div class="mtxlegend"><span><span class="tg pos">+</span>Positivo (oportunidad)</span><span><span class="tg neg">−</span>Negativo (amenaza)</span><span><span class="tg nul">○</span>Nulo</span></div>
+    </div>
+  </div>
+  <div class="mxpestel reveal" style="--d:2">
+    <div class="mxcard mtx">
+      <div class="h"><span class="bdg">P</span><span class="t">Político</span></div>
+      <ul>
+        <li><span class="tg pos">+</span><span>T-MEC: libre flujo de datos México-EE. UU. (comercio cross-border).</span></li>
+        <li><span class="tg neg">−</span><span>Incertidumbre arancelaria con EE. UU.: riesgo proteccionista.</span></li>
+        <li><span class="tg neg">−</span><span>La COFECE puede investigar la posición dominante (antimonopolio).</span></li>
+        <li><span class="tg neg">−</span><span>Reforma fiscal digital en el Congreso: mayor carga impositiva.</span></li>
+      </ul>
+    </div>
+    <div class="mxcard mtx">
+      <div class="h"><span class="bdg">E</span><span class="t">Económico</span></div>
+      <ul>
+        <li><span class="tg neg">−</span><span>PIB +1.1% (2024) / 0.7% (2025): consumo discrecional a la baja.</span></li>
+        <li><span class="tg pos">+</span><span>E-commerce solo 11% del retail: amplio espacio de expansión.</span></li>
+        <li><span class="tg pos">+</span><span>IED récord US$36,872 M (nearshoring): más vendedores y B2B.</span></li>
+        <li><span class="tg nul">○</span><span>Tasa de Banxico: si baja, abarata el fondeo de Mercado Crédito.</span></li>
+      </ul>
+    </div>
+    <div class="mxcard mtx">
+      <div class="h"><span class="bdg">S</span><span class="t">Social</span></div>
+      <ul>
+        <li><span class="tg pos">+</span><span>Informalidad &gt;55%: +30 M sin crédito → Mercado Crédito.</span></li>
+        <li><span class="tg neg">−</span><span>Brecha digital: 28.9% (decil bajo) vs 98.4% (decil alto).</span></li>
+        <li><span class="tg pos">+</span><span>Billetera digital 23% (vs 37% Argentina): alto potencial.</span></li>
+        <li><span class="tg neg">−</span><span>TikTok Shop y el comercio social capturan a la Gen Z.</span></li>
+      </ul>
+    </div>
+    <div class="mxcard mtx">
+      <div class="h"><span class="bdg">T</span><span class="t">Tecnológico</span></div>
+      <ul>
+        <li><span class="tg neg">−</span><span>Baja digitalización PyME: 3.8% web · 0.1% IA · 4.7% nube.</span></li>
+        <li><span class="tg pos">+</span><span>5G en 2026-27: realidad aumentada y entregas en tiempo real.</span></li>
+        <li><span class="tg pos">+</span><span>IA validada en Argentina y Brasil llega madura a México.</span></li>
+        <li><span class="tg neg">−</span><span>Alibaba Cloud abre data center (2025): apoya a rivales chinos.</span></li>
+      </ul>
+    </div>
+    <div class="mxcard mtx">
+      <div class="h"><span class="bdg">E</span><span class="t">Ecológico</span></div>
+      <ul>
+        <li><span class="tg neg">−</span><span>Restricciones vehiculares (Hoy No Circula) elevan el costo de envío.</span></li>
+        <li><span class="tg pos">+</span><span>Auge del mercado de segunda mano y la economía circular.</span></li>
+        <li><span class="tg neg">−</span><span>Sensibilidad ambiental: cambio en la preferencia de marca.</span></li>
+        <li><span class="tg nul">○</span><span>Posible ley de residuos de empaques (ya aprobada en Brasil).</span></li>
+      </ul>
+    </div>
+    <div class="mxcard mtx">
+      <div class="h"><span class="bdg">L</span><span class="t">Legal</span></div>
+      <ul>
+        <li><span class="tg neg">−</span><span>LFPDPPP y NMX-COE-001-SCFI-2018: privacidad y vigilancia.</span></li>
+        <li><span class="tg neg">−</span><span>LFPC: transparencia, derecho de retracto y publicidad veraz.</span></li>
+        <li><span class="tg neg">−</span><span>LFDA: control de falsificaciones y propiedad intelectual.</span></li>
+        <li><span class="tg nul">○</span><span>Tendencia a la localización de datos (modelo LGPD de Brasil).</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Elaboración propia con base en la Matriz PESTEL del documento: INEGI (2024), SHCP (2025), COFECE, SEMARNAT (2024) y MercadoLibre, Inc. (2024).</span><span class="pg">08 / 19</span></div>
 </section>
 
 <!-- 7 · MEFE -->
 <section class="slide slide--paper">
-  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">07</span> · Matriz MEFE</span></div>
+  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">09</span> · Matriz MEFE</span></div>
   <div class="grid c2-wide" style="align-items:center">
     <div class="tbl-wrap reveal" style="--d:1">
       <table class="tbl">
@@ -523,15 +762,15 @@ strong.k{font-weight:700}
         <div class="gtrack"><i style="--w:69.25%"></i><span class="thr" style="left:62.5%"></span></div>
         <div class="gscale"><span>0</span><span>2.00</span><span>4.00</span></div>
       </div>
-      <p class="body" style="font-size:.92rem">Mercado Libre aprovecha bien sus oportunidades —baja penetración del e-commerce y enorme base informal— y enfrenta razonablemente sus amenazas: la llegada de Alibaba Cloud y las investigaciones de la COFECE.</p>
+      <p class="body" style="font-size:.92rem">Mercado Libre aprovecha bien sus oportunidades, baja penetración del e-commerce y enorme base informal, y enfrenta razonablemente sus amenazas: la llegada de Alibaba Cloud y las investigaciones de la COFECE.</p>
     </div>
   </div>
-  <div class="foot"><span>Mercado Libre · Dirección Estratégica</span><span class="pg">07 / 16</span></div>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Elaboración propia con base en David (2017), IMARC Group (2024), SHCP (2024) y OCDE (2024).</span><span class="pg">09 / 19</span></div>
 </section>
 
 <!-- 8 · PORTER -->
 <section class="slide slide--navy">
-  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">08</span> · Cinco Fuerzas de Porter</span>
+  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">10</span> · Cinco Fuerzas de Porter</span>
     <h2 class="title display reveal" style="--d:1;font-size:clamp(1.7rem,3.4vw,2.8rem);margin-top:.3em">Barreras altas, rivalidad intensa</h2>
   </div>
   <div class="porter2 reveal" style="--d:2">
@@ -557,7 +796,7 @@ strong.k{font-weight:700}
       <div class="nm">Rivalidad competitiva</div>
       <span class="lvlchip">Intensidad alta</span>
       <div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
-      <div class="det">Amazon · Walmart · plataformas chinas · TikTok Shop — cuatro frentes a la vez</div>
+      <div class="det">Amazon · Walmart · plataformas chinas · TikTok Shop, cuatro frentes a la vez</div>
     </div>
 
     <div class="pf pf-right">
@@ -571,15 +810,15 @@ strong.k{font-weight:700}
       <div class="pf-head"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg><div class="nm">Sustitutos</div></div>
       <div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
       <div class="mlabel">Presión media</div>
-      <div class="det">Retail presencial, comercio social y tianguis digitales — limitados a nichos.</div>
+      <div class="det">Retail presencial, comercio social y tianguis digitales, limitados a nichos.</div>
     </div>
   </div>
-  <div class="foot"><span>Mercado Libre · Dirección Estratégica</span><span class="pg">08 / 16</span></div>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Elaboración propia con base en Porter (2008), América Retail (2025) y Americas Market Intelligence (2024).</span><span class="pg">10 / 19</span></div>
 </section>
 
 <!-- 9 · FINANZAS -->
 <section class="slide slide--paper">
-  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">09</span> · Situación financiera</span></div>
+  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">11</span> · Situación financiera</span></div>
   <div class="grid c2-wide" style="align-items:center">
     <div class="tbl-wrap reveal" style="--d:1">
       <div style="font-weight:700;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;opacity:.6;margin-bottom:.6em">Ingresos netos por segmento geográfico · millones USD</div>
@@ -613,13 +852,13 @@ strong.k{font-weight:700}
       <p class="body" style="font-size:.92rem">La concentración en Brasil y México es una debilidad estructural: juntos representan más del <strong class="k">77%</strong> del total, lo que expone a la empresa a la coyuntura de esos dos países.</p>
     </div>
   </div>
-  <div class="foot"><span>Mercado Libre · Dirección Estratégica</span><span class="pg">09 / 16</span></div>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Elaboración propia con base en MercadoLibre, Inc. (2025), Form 10-K FY2024, Nota 23.</span><span class="pg">11 / 19</span></div>
 </section>
 
 <!-- 10 · VRIO -->
 <section class="slide slide--paper">
-  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">10</span> · Análisis VRIO</span>
-    <h2 class="title display reveal" style="--d:1;font-size:clamp(1.7rem,3.2vw,2.7rem);margin-top:.3em">¿Qué hace a ML difícil de copiar?</h2>
+  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">12</span> · Análisis VRIO</span>
+    <h2 class="title display reveal" style="--d:1;font-size:clamp(1.7rem,3.2vw,2.7rem);margin-top:.3em">¿Qué hace a Mercado Libre difícil de copiar?</h2>
   </div>
   <div class="grid c2-wide" style="align-items:center">
     <div class="tbl-wrap reveal" style="--d:1">
@@ -647,17 +886,17 @@ strong.k{font-weight:700}
       <p class="lead" style="font-size:clamp(.95rem,1.35vw,1.18rem)">La oportunidad: no hay que crear nada nuevo, solo organizar lo que el VRIO ya validó.</p>
     </div>
   </div>
-  <div class="foot"><span>Mercado Libre · Dirección Estratégica</span><span class="pg">10 / 16</span></div>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Elaboración propia con base en Barney (1991, 1995) y MercadoLibre, Inc. (2025).</span><span class="pg">12 / 19</span></div>
 </section>
 
 <!-- 11 · CADENA DE VALOR -->
 <section class="slide slide--navy">
-  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">11</span> · Cadena de valor</span></div>
+  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">13</span> · Cadena de valor</span></div>
   <div class="grid c2-rev" style="align-items:start">
     <div class="stack" style="align-self:center">
       <h2 class="title display reveal" style="--d:1">Dónde se crea<br>la ventaja</h2>
-      <p class="body reveal" style="--d:2">Siguiendo a Porter, la ventaja se concentra en cómo ML <strong class="k">enlaza sus actividades</strong> primarias y de apoyo. El caso más claro es <span class="hl">Mercado Pago con custodia de fondos</span>: el dinero se libera al vendedor solo cuando el comprador confirma la entrega, lo que genera confianza y reduce el fraude.</p>
-      <p class="body reveal" style="--d:3">El sistema de reputación de vendedores —homogéneo en 18 países— y el <span class="hl">Sustainability Bond</span>, evaluado por Sustainalytics y alineado a los ODS, refuerzan la propuesta de valor y el posicionamiento ESG.</p>
+      <p class="body reveal" style="--d:2">Siguiendo a Porter, la ventaja se concentra en cómo Mercado Libre <strong class="k">enlaza sus actividades</strong> primarias y de apoyo. El caso más claro es <span class="hl">Mercado Pago con custodia de fondos</span>: el dinero se libera al vendedor solo cuando el comprador confirma la entrega, lo que genera confianza y reduce el fraude.</p>
+      <p class="body reveal" style="--d:3">El sistema de reputación de vendedores, homogéneo en 18 países, y el <span class="hl">Sustainability Bond</span>, evaluado por Sustainalytics y alineado a los ODS, refuerzan la propuesta de valor y el posicionamiento ESG.</p>
     </div>
     <div class="vc reveal" style="--d:3;align-self:center">
       <div class="vcrow"><span class="lab">Logística</span><span class="txt">Red propia de escala continental con hub aéreo y optimización de rutas por IA.</span></div>
@@ -668,20 +907,16 @@ strong.k{font-weight:700}
       <div class="vcrow"><span class="lab">Abastecimiento</span><span class="txt">Sustainability Bond evaluado por Sustainalytics, alineado a los ODS.</span></div>
     </div>
   </div>
-  <div class="foot"><span>Mercado Libre · Dirección Estratégica</span><span class="pg">11 / 16</span></div>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Elaboración propia con base en Porter (1985), MercadoLibre, Inc. (2025) y Sustainalytics (2024).</span><span class="pg">13 / 19</span></div>
 </section>
 
-<!-- 12 · MEFI + MPC -->
+<!-- 12 · MEFI -->
 <section class="slide slide--paper">
-  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">12</span> · Matrices MEFI y MPC</span>
-    <h2 class="title display reveal" style="--d:1;font-size:clamp(1.7rem,3.2vw,2.7rem);margin-top:.3em">Posición interna y frente a la competencia</h2>
+  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">14</span> · Matriz MEFI</span>
+    <h2 class="title display reveal" style="--d:1;font-size:clamp(1.7rem,3.2vw,2.7rem);margin-top:.3em">Posición interna favorable</h2>
   </div>
-  <div class="grid c2" style="align-items:center">
-    <div class="reveal" style="--d:1">
-      <div style="display:flex;align-items:baseline;gap:1em;margin-bottom:.7em">
-        <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;opacity:.6">MEFI</span>
-        <span class="score" style="flex-direction:row;align-items:baseline;gap:.4em;padding:.3em .8em;border-width:1.5px"><span class="big" style="font-size:1.7rem">2.64</span><span class="cap">/ 4.00 · posición favorable</span></span>
-      </div>
+  <div class="grid c2-wide" style="align-items:center">
+    <div class="tbl-wrap reveal" style="--d:1">
       <table class="tbl">
         <thead><tr><th>Factor interno</th><th class="n">Peso</th><th class="n">Cal.</th><th class="n">Pond.</th></tr></thead>
         <tbody>
@@ -694,29 +929,52 @@ strong.k{font-weight:700}
         </tbody>
       </table>
     </div>
-    <div class="reveal" style="--d:2">
-      <div style="display:flex;align-items:baseline;gap:1em;margin-bottom:.9em">
-        <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;opacity:.6">MPC · puntaje ponderado total</span>
-      </div>
-      <div class="bars" style="margin-bottom:1em">
+    <div class="stack reveal" style="--d:2">
+      <div class="score"><div class="big">2.64<span style="font-size:.5em;opacity:.5"> / 4.00</span></div><div class="cap">Supera el umbral de 2.50</div></div>
+      <p class="body" style="font-size:.93rem">Las fortalezas pesan más que las debilidades: el <strong class="k">ecosistema integrado</strong> (0.80) y la <strong class="k">red logística</strong> (0.72) son los factores de mayor impacto.</p>
+      <p class="body" style="font-size:.93rem">La debilidad crítica es la <span class="hl">concentración de ingresos en dos mercados</span> (D1, ponderación 0.27): el problema interno prioritario.</p>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Elaboración propia con base en David (2017), MercadoLibre, Inc. (2025) y Americas Market Intelligence (2024).</span><span class="pg">14 / 19</span></div>
+</section>
+
+<!-- 13 · MPC -->
+<section class="slide slide--paper">
+  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">15</span> · Matriz del Perfil Competitivo</span>
+    <h2 class="title display reveal" style="--d:1;font-size:clamp(1.7rem,3.2vw,2.7rem);margin-top:.3em">Liderazgo frente a la competencia</h2>
+  </div>
+  <div class="grid c2" style="align-items:center">
+    <div class="stack reveal" style="--d:1">
+      <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;opacity:.6;margin-bottom:.2em">Puntaje ponderado total</div>
+      <div class="bars">
         <div class="barrow"><span class="name">Mercado Libre</span><div class="bartrack"><i class="fill-ml" style="--w:90.5%"></i></div><span class="val">3.62</span></div>
         <div class="barrow"><span class="name">Amazon</span><div class="bartrack"><i class="fill-az" style="--w:69.5%"></i></div><span class="val">2.78</span></div>
         <div class="barrow"><span class="name">Shopee</span><div class="bartrack"><i class="fill-sh" style="--w:54%"></i></div><span class="val">2.16</span></div>
       </div>
-      <p class="body" style="font-size:.9rem">Mercado Libre encabeza con <strong class="k">3.62</strong>, muy por encima de Amazon (2.78) y Shopee (2.16). Su ventaja es estructural: lidera en conocimiento local, integración fintech e infraestructura logística.</p>
-      <div class="legend" style="margin-top:.8em">
-        <span><i class="dot" style="background:var(--ml-navy)"></i>Mercado Libre</span>
-        <span><i class="dot" style="background:var(--ml-mist)"></i>Amazon</span>
-        <span><i class="dot" style="background:var(--ml-mist-2)"></i>Shopee</span>
-      </div>
+      <p class="body" style="font-size:.92rem">Mercado Libre encabeza con <strong class="k">3.62</strong>, muy por encima de Amazon (2.78) y Shopee (2.16). Su ventaja es <strong class="k">estructural</strong>: lidera en los tres factores de mayor peso, conocimiento local, fintech propia y logística.</p>
+    </div>
+    <div class="tbl-wrap reveal" style="--d:2">
+      <div style="font-weight:700;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;opacity:.6;margin-bottom:.5em">Calificación por factor crítico (peso)</div>
+      <table class="tbl" style="font-size:clamp(.7rem,.98vw,.92rem)">
+        <thead><tr><th>Factor crítico (peso)</th><th class="n">Mercado Libre</th><th class="n">Amazon</th><th class="n">Shopee</th></tr></thead>
+        <tbody>
+          <tr><td class="fac">F1 · Conocimiento local (0.22)</td><td class="n" style="background:color-mix(in srgb,var(--ml-yellow) 50%,transparent);font-weight:800">4</td><td class="n">2</td><td class="n">2</td></tr>
+          <tr><td class="fac">F2 · Fintech y pagos propios (0.20)</td><td class="n" style="background:color-mix(in srgb,var(--ml-yellow) 50%,transparent);font-weight:800">4</td><td class="n">2</td><td class="n">1</td></tr>
+          <tr><td class="fac">F3 · Logística &lt;48 h (0.20)</td><td class="n" style="background:color-mix(in srgb,var(--ml-yellow) 50%,transparent);font-weight:800">4</td><td class="n">3</td><td class="n">2</td></tr>
+          <tr><td class="fac">F4 · IA aplicada (0.20)</td><td class="n">3</td><td class="n" style="background:color-mix(in srgb,var(--ml-yellow) 50%,transparent);font-weight:800">4</td><td class="n">2</td></tr>
+          <tr><td class="fac">F5 · Precios y captación (0.18)</td><td class="n">3</td><td class="n">3</td><td class="n" style="background:color-mix(in srgb,var(--ml-yellow) 50%,transparent);font-weight:800">4</td></tr>
+          <tr class="total"><td>Puntaje total</td><td class="n">3.62</td><td class="n">2.78</td><td class="n">2.16</td></tr>
+        </tbody>
+      </table>
+      <div class="tbl-cap">Celda resaltada = competidor más fuerte en ese factor. Cal.: 4 = mayor; 1 = menor.</div>
     </div>
   </div>
-  <div class="foot"><span>Mercado Libre · Dirección Estratégica</span><span class="pg">12 / 16</span></div>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Elaboración propia con base en David (2017), Kavout (2024), Bloomberg Línea (2025) y Americas Market Intelligence (2024).</span><span class="pg">15 / 19</span></div>
 </section>
 
 <!-- 13 · ESTRATEGIAS -->
 <section class="slide slide--yellow">
-  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">13</span> · Estrategias propuestas</span>
+  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">16</span> · Estrategias propuestas</span>
     <h2 class="title display reveal" style="--d:1;margin-top:.3em">Estrategias en tres niveles</h2>
   </div>
   <div class="levels">
@@ -724,13 +982,13 @@ strong.k{font-weight:700}
     <div class="lvlcard reveal" style="--d:2"><div class="n">02</div><h3>De negocio</h3><p>Explotan las fortalezas top: el ecosistema integrado, la red logística y la base de datos propietaria.</p><div class="codes">F1 · F2 · R3</div></div>
     <div class="lvlcard reveal" style="--d:3"><div class="n">03</div><h3>Funcionales</h3><p>Capitalizan las oportunidades y amenazas de la MEFE: expansión, inclusión, Alibaba Cloud y COFECE.</p><div class="codes">O1 · O2 · A1 · A2</div></div>
   </div>
-  <p class="lead reveal" style="--d:4;margin-top:clamp(14px,2.5vh,28px);max-width:none">Premisa: ningún recurso se crea desde cero — solo falta organizar lo que el VRIO ya validó.</p>
-  <div class="foot"><span>Mercado Libre · Dirección Estratégica</span><span class="pg">13 / 16</span></div>
+  <p class="lead reveal" style="--d:4;margin-top:clamp(14px,2.5vh,28px);max-width:none">Premisa: ningún recurso se crea desde cero, solo falta organizar lo que el VRIO ya validó.</p>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Elaboración propia con base en David (2017) y los resultados MEFE, MEFI, VRIO y MPC.</span><span class="pg">16 / 19</span></div>
 </section>
 
 <!-- 14 · ESTRATEGIAS CON INDICADORES -->
 <section class="slide slide--paper">
-  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">14</span> · De la estrategia a la acción medible</span></div>
+  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">17</span> · De la estrategia a la acción medible</span></div>
   <div class="tbl-wrap reveal" style="--d:1;flex:1;display:flex;flex-direction:column;justify-content:center">
     <table class="tbl" style="font-size:clamp(.72rem,1vw,.95rem)">
       <thead><tr><th>Estrategia</th><th>Objetivo</th><th>Indicador verificable</th></tr></thead>
@@ -744,12 +1002,12 @@ strong.k{font-weight:700}
     </table>
     <div class="tbl-cap">Cada estrategia se traduce en un objetivo concreto y un indicador verificable, de modo que la propuesta pueda evaluarse en el tiempo.</div>
   </div>
-  <div class="foot"><span>Mercado Libre · Dirección Estratégica</span><span class="pg">14 / 16</span></div>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Elaboración propia.</span><span class="pg">17 / 19</span></div>
 </section>
 
 <!-- 15 · CONCLUSIÓN -->
 <section class="slide slide--navy">
-  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">15</span> · Conclusión</span></div>
+  <div class="head"><span class="eyebrow reveal" style="--d:0"><span class="num">18</span> · Conclusión</span></div>
   <div class="grid c2" style="align-items:center">
     <div class="stack">
       <h2 class="title display reveal" style="--d:1">La ventaja está<br>en integrar</h2>
@@ -763,7 +1021,7 @@ strong.k{font-weight:700}
       </div>
     </div>
   </div>
-  <div class="foot"><span>Mercado Libre · Dirección Estratégica</span><span class="pg">15 / 16</span></div>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Elaboración propia con base en el análisis estratégico integral.</span><span class="pg">18 / 19</span></div>
 </section>
 
 <!-- 16 · CIERRE -->
@@ -777,6 +1035,7 @@ strong.k{font-weight:700}
     </svg>
     <p class="sig reveal" style="--d:2">Referencias principales: Form 10-K de MercadoLibre · BBVA Research · OCDE · CEPAL · Statista · Sustainalytics · AMVO · COFECE · INEGI.</p>
   </div>
+  <div class="foot"><span class="brand">Análisis Estratégico · Mercado Libre · 4GM1</span><span class="cite">Referencias completas en el documento de la Etapa 2 (formato APA 7).</span><span class="pg">19 / 19</span></div>
 </section>
 
 </main>
